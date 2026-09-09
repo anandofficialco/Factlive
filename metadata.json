@@ -1,0 +1,8 @@
+{
+  "name": "FactLive — The Global Truth Dispatch",
+  "description": "An independent broadsheet and non-partisan evidentiary engine auditing public claims, breaking rumors, and viral narratives in real time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
