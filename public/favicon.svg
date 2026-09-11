@@ -1,34 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="navyBg" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stopColor="#132743" />
+      <stop offset="60%" stopColor="#0A182E" />
+      <stop offset="100%" stopColor="#050C17" />
+    </radialGradient>
+    <linearGradient id="crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FF2A3A" />
+      <stop offset="100%" stopColor="#C40E1B" />
+    </linearGradient>
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#E6C875" />
+      <stop offset="50%" stopColor="#C5A059" />
+      <stop offset="100%" stopColor="#9B7A38" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Outer Concentric Gold Accent Ring -->
+  <circle cx="250" cy="250" r="242" fill="none" stroke="url(#goldRing)" stroke-width="5" opacity="0.85" />
+  <circle cx="250" cy="250" r="236" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.25" />
+
   <!-- Deep Navy Circular Background -->
-  <circle cx="250" cy="250" r="230" fill="#0A182E" />
-  
-  <!-- Stylized Monogram F in White -->
-  <path
-    d="M 170 375
-       L 218 375
-       L 218 290
-       L 278 290
-       L 306 242
-       L 218 242
-       L 218 194
-       L 344 194
-       L 322 142
-       L 226 142
-       C 188 142, 170 165, 170 204
-       Z"
-    fill="#FFFFFF"
-  />
-  
-  <!-- Stylized Monogram L in Vibrant Crimson Red -->
-  <path
-    d="M 284 246
-       L 252 300
-       L 252 375
-       L 348 375
-       L 348 326
-       L 298 326
-       L 298 272
-       Z"
-    fill="#D91621"
-  />
+  <circle cx="250" cy="250" r="230" fill="url(#navyBg)" />
+
+  <g filter="url(#shadow)">
+    <!-- Stylized Monogram F in Pure White -->
+    <path
+      d="M 168 380
+         L 220 380
+         L 220 292
+         L 282 292
+         L 310 242
+         L 220 242
+         L 220 190
+         L 348 190
+         L 326 138
+         L 226 138
+         C 184 138, 168 162, 168 202
+         Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- Stylized Monogram L in Vibrant Crimson Red -->
+    <path
+      d="M 288 244
+         L 254 300
+         L 254 380
+         L 352 380
+         L 352 328
+         L 302 328
+         L 302 272
+         Z"
+      fill="url(#crimson)"
+    />
+  </g>
 </svg>

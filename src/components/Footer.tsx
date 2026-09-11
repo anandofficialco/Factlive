@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ShieldCheck, Scale, Globe, ExternalLink, Heart, Feather, LayoutGrid, Newspaper, Moon } from "lucide-react";
 import { FactLiveLogo } from "./FactLiveLogo";
 import { useTheme } from "../utils/theme";
+import { DeviceToggle } from "./DeviceToggle";
 
 interface FooterProps {
   onOpenMethodology: () => void;
@@ -23,8 +24,8 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 1 Masthead & Ethos */}
           <div className="md:col-span-1 space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="rounded-full overflow-hidden border border-stone-800 dark:border-stone-300">
-                <FactLiveLogo size={32} />
+              <div className="shrink-0">
+                <FactLiveLogo size={36} />
               </div>
               <span className="text-lg font-black font-serif tracking-tight text-stone-900 dark:text-stone-100">FactLive</span>
               <span className="border border-stone-800 dark:border-stone-400 bg-[#F4EFE6] dark:bg-[#22201D] px-1.5 py-0.2 font-mono text-[9px] font-bold text-stone-900 dark:text-stone-100 uppercase tracking-widest">
@@ -161,6 +162,14 @@ export const Footer: React.FC<FooterProps> = ({
           <p>© {new Date().getFullYear()} FactLive (<a href="https://www.factlive.in" className="hover:underline font-bold text-stone-800 dark:text-stone-200">www.factlive.in</a>) & Research Foundation. All rights reserved.</p>
           
           <div className="flex flex-wrap items-center gap-4">
+            {/* Viewport Device Toggle (Phone, Tab, PC) */}
+            <div className="flex items-center gap-1.5">
+              <span className="text-[10px] uppercase font-bold text-stone-500">Device:</span>
+              <DeviceToggle size="sm" showLabels={true} />
+            </div>
+
+            <span>•</span>
+
             {/* Footer Editorial Theme Switcher */}
             <div className="inline-flex items-center border border-stone-400 dark:border-stone-700 bg-white dark:bg-stone-900 p-0.5" role="group" aria-label="Footer Theme Selector">
               <button

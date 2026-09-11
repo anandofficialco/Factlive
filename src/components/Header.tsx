@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "../utils/theme";
 import { FactLiveLogo } from "./FactLiveLogo";
+import { DeviceToggle } from "./DeviceToggle";
 
 interface HeaderProps {
   activeTab?: "verify" | "feed" | "compare";
@@ -79,6 +80,11 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="flex items-center gap-4 text-[11px]">
             <span className="hidden sm:inline font-medium">{currentDateStr}</span>
+            <span className="hidden md:inline text-stone-400 dark:text-stone-600">•</span>
+            <div className="hidden lg:flex items-center gap-1.5">
+              <span className="text-[10px] uppercase font-bold text-stone-500">View:</span>
+              <DeviceToggle size="sm" showLabels={true} />
+            </div>
             <span className="text-stone-400 dark:text-stone-600">•</span>
             <span className="flex items-center gap-1.5 text-emerald-800 dark:text-emerald-400 font-semibold">
               <span className="h-2 w-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse" />
@@ -98,8 +104,8 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3.5 text-left group"
             id="brand-logo-btn"
           >
-            <div className="transition-transform group-hover:scale-105 shadow-sm rounded-full overflow-hidden border-2 border-stone-800 dark:border-stone-400">
-              <FactLiveLogo size={42} />
+            <div className="transition-transform group-hover:scale-105 shrink-0">
+              <FactLiveLogo size={46} />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -121,6 +127,11 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Quick Action Controls */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Phone / Tab / PC Viewport Toggle */}
+            <div className="flex items-center">
+              <DeviceToggle size="md" showLabels={true} />
+            </div>
+
             {/* Two-Theme Toggle Navigation: Editorial Aesthetic Light & Dark */}
             <div
               id="editorial-theme-toggle-nav"

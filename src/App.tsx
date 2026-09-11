@@ -11,21 +11,27 @@ import { Reports } from "./pages/Reports";
 import { Blog } from "./pages/Blog";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ThemeProvider } from "./utils/theme";
+import { DeviceModeProvider } from "./utils/deviceMode";
+import { DeviceFrame } from "./components/DeviceFrame";
 
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/deep-research" element={<DeepResearch />} />
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <DeviceModeProvider>
+        <BrowserRouter>
+          <DeviceFrame>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/deep-research" element={<DeepResearch />} />
+              <Route path="/publications" element={<Publications />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </DeviceFrame>
+        </BrowserRouter>
+      </DeviceModeProvider>
     </ThemeProvider>
   );
 }

@@ -30,8 +30,8 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({
         </button>
 
         <div className="flex items-center gap-3 border-b-2 border-stone-800 dark:border-stone-700 pb-4">
-          <div className="rounded-full overflow-hidden border border-stone-800 dark:border-stone-300">
-            <FactLiveLogo size={36} />
+          <div className="shrink-0">
+            <FactLiveLogo size={42} />
           </div>
           <div>
             <h3 className="text-2xl font-serif font-black text-stone-900 dark:text-stone-100">FactLive Evidentiary Charter</h3>
